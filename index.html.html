@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Baloch Taste Restaurant | Balochi, Pakistani &amp; BBQ Food</title>
+  <meta name="description" content="Baloch Taste Restaurant serves Balochi, Pakistani and BBQ food. Order on WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@500;700;800&family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --indigo: #14303a;
+      --indigo-soft: #1f4552;
+      --saffron: #e9a620;
+      --coal: #1c1a18;
+      --sand: #f7f5f0;
+      --white: #ffffff;
+      --muted: #5d6a6e;
+      --line: #dfdbd1;
+      --whatsapp: #1fa855;
+      --serif: "Alegreya", Georgia, serif;
+      --sans: "Mulish", "Segoe UI", Arial, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+    body { font-family: var(--sans); color: var(--coal); background: var(--sand); line-height: 1.65; font-size: 17px; }
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid var(--saffron); outline-offset: 3px; }
+    .wrap { width: min(1080px, 92%); margin: 0 auto; }
+    section { padding: 72px 0; }
+    h1, h2, h3 { font-family: var(--serif); line-height: 1.15; }
+    h2 { font-size: clamp(2rem, 5vw, 2.8rem); color: var(--indigo); margin-bottom: 14px; }
+    .lead { color: var(--muted); max-width: 60ch; margin-bottom: 36px; }
+
+    /* Buttons */
+    .btn {
+      display: inline-block; text-decoration: none; font-weight: 700; font-size: 1rem;
+      background: var(--saffron); color: var(--coal);
+      padding: 13px 26px; border-radius: 8px; margin: 0 10px 10px 0;
+      transition: transform .15s ease, background .15s ease;
+    }
+    .btn:hover { background: #f5b93a; transform: translateY(-2px); }
+    .btn.ghost { background: transparent; color: var(--white); border: 2px solid var(--white); padding: 11px 24px; }
+    .btn.ghost:hover { background: rgba(255,255,255,.12); }
+    .btn.wa { background: var(--whatsapp); color: var(--white); }
+    .btn.wa:hover { background: #26bf64; }
+
+    /* Header */
+    header { position: sticky; top: 0; z-index: 10; background: var(--indigo); color: var(--white); }
+    .nav { display: flex; align-items: center; justify-content: space-between; min-height: 62px; gap: 16px; }
+    .logo { font-family: var(--serif); font-weight: 800; font-size: 1.35rem; text-decoration: none; color: var(--saffron); white-space: nowrap; }
+    nav ul { list-style: none; display: flex; gap: 4px; flex-wrap: wrap; }
+    nav a { text-decoration: none; padding: 8px 11px; border-radius: 6px; font-weight: 600; font-size: .95rem; display: block; }
+    nav a:hover { background: var(--indigo-soft); }
+
+    /* Hero */
+    #home {
+      background:
+        linear-gradient(rgba(20,48,58,.9), rgba(20,48,58,.96)),
+        repeating-linear-gradient(45deg, var(--indigo) 0 18px, var(--indigo-soft) 18px 20px);
+      color: var(--white);
+      padding: 88px 0 0;
+    }
+    .hero-text { padding-bottom: 64px; }
+    .hero-kicker { color: var(--saffron); font-weight: 700; margin-bottom: 14px; }
+    #home h1 { font-size: clamp(2.6rem, 9vw, 5rem); font-weight: 800; max-width: 13ch; }
+    #home .sub { max-width: 54ch; margin: 20px 0 28px; font-size: 1.12rem; color: #dbe5e8; }
+    .hero-strip { background: rgba(0,0,0,.28); border-top: 1px solid rgba(255,255,255,.15); }
+    .strip-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .strip-item { padding: 20px 16px 20px 0; }
+    .strip-item strong { display: block; color: var(--saffron); font-family: var(--serif); font-size: 1.15rem; }
+    .strip-item span { font-size: .95rem; color: #dbe5e8; }
+
+    /* About */
+    .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: start; }
+    .about-grid p + p { margin-top: 16px; }
+    .facts { background: var(--white); border-left: 5px solid var(--saffron); padding: 26px 28px; border-radius: 4px; }
+    .facts h3 { font-size: 1.4rem; color: var(--indigo); margin-bottom: 12px; }
+    .facts li { list-style: none; padding: 9px 0; border-bottom: 1px solid var(--line); }
+    .facts li:last-child { border-bottom: 0; }
+
+    /* Menu */
+    #menu { background: var(--white); }
+    .popular { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 48px; margin-bottom: 56px; }
+    .dish { display: flex; justify-content: space-between; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+    .dish h3 { font-size: 1.35rem; color: var(--coal); }
+    .dish p { color: var(--muted); font-size: .94rem; }
+    .price { font-family: var(--serif); font-weight: 800; font-size: 1.3rem; color: var(--indigo); white-space: nowrap; }
+    .price small { display: block; font-family: var(--sans); font-weight: 600; font-size: .75rem; color: var(--muted); text-align: right; }
+    .menu-title { font-size: 1.5rem; margin-bottom: 20px; }
+    .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
+    .menu-col h3 { font-size: 1.6rem; color: var(--indigo); padding-bottom: 8px; border-bottom: 3px solid var(--saffron); margin-bottom: 8px; }
+    .menu-col .note { color: var(--muted); font-size: .92rem; }
+    .item { padding: 14px 0; border-bottom: 1px dashed var(--line); }
+    .item strong { display: block; font-size: 1.05rem; }
+    .item span { color: var(--muted); font-size: .94rem; }
+    .order-bar { margin-top: 44px; background: var(--indigo); color: var(--white); border-radius: 8px; padding: 26px 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .order-bar h3 { font-size: 1.5rem; }
+    .order-bar p { color: #dbe5e8; }
+    .order-bar .btn { margin: 0; }
+
+    /* Reviews */
+    .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    blockquote { background: var(--white); border-top: 4px solid var(--saffron); padding: 24px; border-radius: 4px; display: flex; flex-direction: column; gap: 14px; }
+    .stars { color: var(--saffron); letter-spacing: 3px; font-size: 1.1rem; }
+    blockquote footer { background: none; padding: 0; text-align: left; color: var(--indigo); font-weight: 700; font-size: .95rem; margin-top: auto; }
+    .sample-note { margin-top: 24px; color: var(--muted); font-size: .9rem; }
+
+    /* Hours + Contact */
+    #contact { background: var(--white); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .info p { margin-bottom: 14px; }
+    .info strong { display: block; color: var(--indigo); }
+    .hours { width: 100%; border-collapse: collapse; margin: 6px 0 24px; }
+    .hours th, .hours td { text-align: left; padding: 10px 0; border-bottom: 1px solid var(--line); font-weight: 400; }
+    .hours td { text-align: right; }
+    .hours tr.today th, .hours tr.today td { font-weight: 800; color: var(--indigo); }
+    .hours tr.today th::after { content: " (today)"; color: var(--saffron); font-weight: 700; }
+    form { display: grid; gap: 14px; align-content: start; }
+    label { font-weight: 700; font-size: .95rem; }
+    input, textarea { width: 100%; font: inherit; padding: 12px 14px; margin-top: 5px; border: 1.5px solid var(--line); border-radius: 8px; background: var(--white); }
+    input:focus, textarea:focus { border-color: var(--indigo); outline: 2px solid var(--saffron); }
+    textarea { min-height: 120px; resize: vertical; }
+    button.btn { border: 0; cursor: pointer; justify-self: start; font-family: inherit; }
+
+    /* Footer + floating WhatsApp */
+    body > footer { background: var(--coal); color: #b9b6ae; text-align: center; padding: 28px 0; font-size: .92rem; }
+    .wa-float {
+      position: fixed; right: 16px; bottom: 16px; z-index: 20;
+      background: var(--whatsapp); color: var(--white); text-decoration: none; font-weight: 700;
+      padding: 13px 20px; border-radius: 999px; box-shadow: 0 4px 14px rgba(0,0,0,.3);
+    }
+    .wa-float:hover { background: #26bf64; }
+
+    /* Responsive */
+    @media (max-width: 860px) {
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+      .menu-grid, .review-grid { grid-template-columns: 1fr; gap: 28px; }
+      .popular { grid-template-columns: 1fr; margin-bottom: 44px; }
+    }
+    @media (max-width: 560px) {
+      body { font-size: 16px; }
+      section { padding: 52px 0; }
+      .nav { flex-direction: column; padding: 10px 0; gap: 4px; }
+      nav a { padding: 6px 10px; }
+      #home { padding-top: 56px; }
+      .hero-text { padding-bottom: 44px; }
+      .strip-grid { grid-template-columns: 1fr; }
+      .strip-item { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.12); }
+      .strip-item:last-child { border-bottom: 0; }
+      .btn { display: block; text-align: center; margin-right: 0; }
+      .order-bar { padding: 22px 18px; }
+      .order-bar .btn { width: 100%; }
+      button.btn { justify-self: stretch; }
+      .wa-float { left: 16px; text-align: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="#home">Baloch Taste</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME / HERO -->
+    <section id="home">
+      <div class="wrap hero-text">
+        <p class="hero-kicker">Balochi &bull; Pakistani &bull; BBQ</p>
+        <h1>Baloch Taste Restaurant</h1>
+        <p class="sub">Slow-cooked Balochi dishes, Pakistani favourites and charcoal BBQ, cooked fresh to order. Dine in or order on WhatsApp.</p>
+        <a class="btn wa" href="https://wa.me/923000000000?text=Hello%20Baloch%20Taste%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener">Order on WhatsApp</a>
+        <a class="btn ghost" href="#menu">See the menu</a>
+      </div>
+      <div class="hero-strip">
+        <div class="wrap strip-grid">
+          <div class="strip-item"><strong>Open daily</strong><span>12:00 pm to 11:00 pm</span></div>
+          <div class="strip-item"><strong>Dine-in and takeaway</strong><span>Fresh food, served hot</span></div>
+          <div class="strip-item"><strong>Call or message</strong><span>+92 300 0000000</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="wrap about-grid">
+        <div>
+          <h2>About us</h2>
+          <p>Baloch Taste Restaurant is a family-friendly place for people who love honest, full-flavoured food. Our kitchen is built around Balochi cooking, where meat is cooked slowly and seasoned simply.</p>
+          <p>Alongside our Balochi dishes, we serve Pakistani favourites and fresh BBQ. Everything is cooked to order, so your food reaches the table hot.</p>
+        </div>
+        <aside class="facts">
+          <h3>What we serve</h3>
+          <ul>
+            <li>Traditional Balochi dishes</li>
+            <li>Pakistani curries, rice and bread</li>
+            <li>Charcoal BBQ and grills</li>
+            <li>Dine-in and takeaway</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu">
+      <div class="wrap">
+        <h2>Our menu</h2>
+        <p class="lead">Our six most ordered dishes, and the full list below. Ask our staff about today's specials.</p>
+
+        <div class="popular">
+          <div class="dish"><div><h3>Sajji</h3><p>Roasted chicken with rice</p></div><div class="price">Rs. 1,800<small>per piece</small></div></div>
+          <div class="dish"><div><h3>Landi</h3><p>Slow-cooked lamb, Balochi style</p></div><div class="price">Rs. 2,400<small>per plate</small></div></div>
+          <div class="dish"><div><h3>Chicken Karahi</h3><p>Tomato, ginger and green chilli</p></div><div class="price">Rs. 1,600<small>half kg</small></div></div>
+          <div class="dish"><div><h3>Mutton Pulao</h3><p>Fragrant rice with tender mutton</p></div><div class="price">Rs. 700<small>per plate</small></div></div>
+          <div class="dish"><div><h3>Seekh Kabab</h3><p>Spiced minced beef, grilled</p></div><div class="price">Rs. 900<small>4 pieces</small></div></div>
+          <div class="dish"><div><h3>Chicken Tikka</h3><p>Yogurt marinade, charcoal grilled</p></div><div class="price">Rs. 550<small>per piece</small></div></div>
+        </div>
+
+        <h3 class="menu-title">Full menu</h3>
+        <div class="menu-grid">
+          <div class="menu-col">
+            <h3>Balochi</h3>
+            <p class="note">Slow-cooked and simply spiced</p>
+            <div class="item"><strong>Sajji</strong><span>Whole roasted lamb or chicken, served with rice.</span></div>
+            <div class="item"><strong>Landi</strong><span>Air-dried lamb, slow-cooked until tender.</span></div>
+            <div class="item"><strong>Khaddi Kabab</strong><span>Marinated meat, roasted in a pit.</span></div>
+            <div class="item"><strong>Kaak</strong><span>Traditional Balochi bread, baked on hot stones.</span></div>
+          </div>
+          <div class="menu-col">
+            <h3>Pakistani</h3>
+            <p class="note">Everyday comfort food</p>
+            <div class="item"><strong>Chicken Karahi</strong><span>Tomato, ginger and green chilli, cooked in a wok.</span></div>
+            <div class="item"><strong>Mutton Pulao</strong><span>Fragrant rice cooked with tender mutton.</span></div>
+            <div class="item"><strong>Daal Fry</strong><span>Yellow lentils with garlic and cumin.</span></div>
+            <div class="item"><strong>Naan &amp; Roti</strong><span>Fresh from the tandoor.</span></div>
+          </div>
+          <div class="menu-col">
+            <h3>BBQ</h3>
+            <p class="note">Grilled over charcoal</p>
+            <div class="item"><strong>Chicken Tikka</strong><span>Yogurt and spice marinade, grilled on skewers.</span></div>
+            <div class="item"><strong>Seekh Kabab</strong><span>Minced beef or chicken with herbs.</span></div>
+            <div class="item"><strong>Mutton Chaap</strong><span>Juicy chops with a smoky finish.</span></div>
+            <div class="item"><strong>Malai Boti</strong><span>Creamy, mild and soft.</span></div>
+          </div>
+        </div>
+
+        <div class="order-bar">
+          <div>
+            <h3>Ready to order?</h3>
+            <p>Send us your order on WhatsApp and we will confirm it.</p>
+          </div>
+          <a class="btn wa" href="https://wa.me/923000000000?text=Hello%20Baloch%20Taste%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener">Order on WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews">
+      <div class="wrap">
+        <h2>What our customers say</h2>
+        <p class="lead">Kind words from the people who eat with us.</p>
+        <div class="review-grid">
+          <blockquote>
+            <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>The sajji was soft, smoky and full of flavour. The rice alone was worth the visit.</p>
+            <footer>Ahmed K.</footer>
+          </blockquote>
+          <blockquote>
+            <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>We came as a family and everyone found something they liked. Service was quick and friendly.</p>
+            <footer>Sana R.</footer>
+          </blockquote>
+          <blockquote>
+            <div class="stars" aria-label="4 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+            <p>Best seekh kababs I have had in a long time, and the WhatsApp order arrived hot.</p>
+            <footer>Bilal M.</footer>
+          </blockquote>
+        </div>
+        <p class="sample-note">These are sample reviews. Replace them with real reviews from your customers.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT + HOURS -->
+    <section id="contact">
+      <div class="wrap">
+        <h2>Contact and opening hours</h2>
+        <p class="lead">Call to reserve a table, or message us on WhatsApp for takeaway.</p>
+        <div class="contact-grid">
+
+          <div class="info">
+            <p><strong>Opening hours</strong></p>
+            <table class="hours" id="hours">
+              <tr data-day="1"><th scope="row">Monday</th><td>12:00 pm to 11:00 pm</td></tr>
+              <tr data-day="2"><th scope="row">Tuesday</th><td>12:00 pm to 11:00 pm</td></tr>
+              <tr data-day="3"><th scope="row">Wednesday</th><td>12:00 pm to 11:00 pm</td></tr>
+              <tr data-day="4"><th scope="row">Thursday</th><td>12:00 pm to 11:00 pm</td></tr>
+              <tr data-day="5"><th scope="row">Friday</th><td>2:00 pm to 11:30 pm</td></tr>
+              <tr data-day="6"><th scope="row">Saturday</th><td>12:00 pm to 11:30 pm</td></tr>
+              <tr data-day="0"><th scope="row">Sunday</th><td>12:00 pm to 11:30 pm</td></tr>
+            </table>
+            <p><strong>Address</strong>Add your restaurant address here</p>
+            <p><strong>Phone</strong><a href="tel:+923000000000">+92 300 0000000</a></p>
+            <a class="btn wa" href="https://wa.me/923000000000?text=Hello%20Baloch%20Taste%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener">Order on WhatsApp</a>
+          </div>
+
+          <!-- This form only shows a message. To receive messages you need a form service later. -->
+          <form onsubmit="event.preventDefault(); alert('Thank you! We will contact you soon.'); this.reset();">
+            <div>
+              <label for="name">Your name</label>
+              <input id="name" type="text" required autocomplete="name">
+            </div>
+            <div>
+              <label for="phone">Phone number</label>
+              <input id="phone" type="tel" required autocomplete="tel">
+            </div>
+            <div>
+              <label for="msg">Message</label>
+              <textarea id="msg" required></textarea>
+            </div>
+            <button class="btn" type="submit">Send message</button>
+          </form>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">&copy; 2026 Baloch Taste Restaurant. All rights reserved.</div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/923000000000?text=Hello%20Baloch%20Taste%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener" aria-label="Order on WhatsApp">Order on WhatsApp</a>
+
+  <script>
+    // Highlight today's row in the opening hours table
+    var today = String(new Date().getDay());
+    var row = document.querySelector('#hours tr[data-day="' + today + '"]');
+    if (row) row.classList.add('today');
+  </script>
+</body>
+</html>
